@@ -1,13 +1,11 @@
 <?php include('koneksi.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <style>
     input{
             border-radius: 10px;
@@ -33,7 +31,6 @@
         padding-bottom: 15px;
     }
 </style>
-
 <body>
     <header align="center">
         <h2>Data Barang</h2>
@@ -63,12 +60,10 @@
                         echo "data berhasil dihapus";
                     }
                 }
-
                 $i=1;
                 foreach($result as $d):
                     $img = $d['url'];
-                    echo "<tr>";
-                    
+                    echo "<tr>"; 
                     echo "<td>".$i."</td>";
                     echo "<td>"."MD-".$d['kode']."</td>";
                     echo "<td>".$d['nama']."</td>";
@@ -81,7 +76,8 @@
                         echo "<td class='red'>".$d['stok']."</td>";
                     }else {
                         echo "<td>".$d['stok']."</td>";
-                    }      
+                    }
+
                     echo "<td>";
                     echo "<a href='hapus.php?kode=".$d['kode']."'>Hapus</a>";
                     echo "</td>";
@@ -93,7 +89,7 @@
         </table>
         <br>
         <center>
-            <input type="button" value="Kembali" onclick="window.location.href = 'input.php';">
+            <input type="button" value="back" onclick="window.location.href = 'input.php';">
         </center>
     </div>
 </body>
